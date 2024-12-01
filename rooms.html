@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rooms - Room Rental Management</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <header>
         <h1>Available Rooms</h1>
@@ -18,90 +20,116 @@
         </nav>
     </header>
     <main>
+
+        <div class="filter-container">
+            <label for="room-type">Filter by Room Type:</label>
+            <select id="room-type">
+                <option value="all">All</option>
+                <option value="family">Family</option>
+                <option value="vip">VIP</option>
+                <option value="solo">Solo</option>
+                <option value="for-2">For 2</option>
+            </select>
+        </div>
+
         <section class="room-list">
-            <div class="room-card" data-room="room-a">
-                <h2>Room A</h2>
+            <div class="room-card" data-room-type="family" data-room="room-a">
+                <img src="images/room1.jpeg" alt="Room A" class="room-image">
                 <p>Price: $500/month</p>
                 <p>Location: Downtown</p>
                 <a href="#" class="btn view-details">View Details</a>
+                <a href="confirmation.html" class="btn rent">Rent</a>
             </div>
-            <div class="room-card" data-room="room-b">
-                <h2>Room B</h2>
+            <div class="room-card" data-room-type="vip" data-room="room-b">
+                <img src="images/room13.jpeg" alt="Room B" class="room-image">
                 <p>Price: $400/month</p>
                 <p>Location: Suburb</p>
                 <a href="#" class="btn view-details">View Details</a>
+                <a href="confirmation.html" class="btn rent">Rent</a>
             </div>
-            <div class="room-card" data-room="room-c">
-                <h2>Room C</h2>
+            <div class="room-card" data-room-type="solo" data-room="room-c">
+                <img src="images/room3.jpeg" alt="Room C" class="room-image">
                 <p>Price: $300/month</p>
                 <p>Location: Rural Area</p>
                 <a href="#" class="btn view-details">View Details</a>
+                <a href="confirmation.html" class="btn rent">Rent</a>
             </div>
-            <div class="room-card" data-room="room-d">
-                <h2>Room D</h2>
+            <div class="room-card" data-room-type="for-2" data-room="room-d">
+                <img src="images/room15.jpeg" alt="Room D" class="room-image">
                 <p>Price: $600/month</p>
                 <p>Location: City Center</p>
                 <a href="#" class="btn view-details">View Details</a>
+                <a href="confirmation.html" class="btn rent">Rent</a>
             </div>
-            <div class="room-card" data-room="room-e">
-                <h2>Room E</h2>
+            <div class="room-card" data-room-type="family" data-room="room-e">
+                <img src="images/room5.jpeg" alt="Room E" class="room-image">
                 <p>Price: $450/month</p>
                 <p>Location: Uptown</p>
                 <a href="#" class="btn view-details">View Details</a>
+                <a href="confirmation.html" class="btn rent">Rent</a>
             </div>
-            <div class="room-card" data-room="room-f">
-                <h2>Room F</h2>
+            <div class="room-card" data-room-type="vip" data-room="room-f">
+                <img src="images/room6.jpeg" alt="Room F" class="room-image">
                 <p>Price: $550/month</p>
                 <p>Location: Near Park</p>
                 <a href="#" class="btn view-details">View Details</a>
+                <a href="confirmation.html" class="btn rent">Rent</a>
             </div>
-            <div class="room-card" data-room="room-g">
-                <h2>Room G</h2>
+            <div class="room-card" data-room-type="solo" data-room="room-g">
+                <img src="images/room7.jpeg" alt="Room G" class="room-image">
                 <p>Price: $350/month</p>
                 <p>Location: Suburban Area</p>
                 <a href="#" class="btn view-details">View Details</a>
+                <a href="confirmation.html" class="btn rent">Rent</a>
             </div>
-            <div class="room-card" data-room="room-h">
-                <h2>Room H</h2>
+            <div class="room-card" data-room-type="vip" data-room="room-h">
+                <img src="images/room8.jpeg" alt="Room H" class="room-image">
                 <p>Price: $700/month</p>
                 <p>Location: Luxury District</p>
                 <a href="#" class="btn view-details">View Details</a>
+                <a href="confirmation.html" class="btn rent">Rent</a>
             </div>
-            <div class="room-card" data-room="room-i">
-                <h2>Room I</h2>
+            <div class="room-card" data-room-type="family" data-room="room-i">
+                <img src="images/room9.jpeg" alt="Room I" class="room-image">
                 <p>Price: $400/month</p>
                 <p>Location: Near University</p>
                 <a href="#" class="btn view-details">View Details</a>
+                <a href="confirmation.html" class="btn rent">Rent</a>
             </div>
-            <div class="room-card" data-room="room-j">
-                <h2>Room J</h2>
+            <div class="room-card" data-room-type="solo" data-room="room-j">
+                <img src="images/images.jpeg" alt="Room J" class="room-image">
                 <p>Price: $500/month</p>
                 <p>Location: Business District</p>
                 <a href="#" class="btn view-details">View Details</a>
+                <a href="confirmation.html" class="btn rent">Rent</a>
             </div>
-            <div class="room-card" data-room="room-k">
-                <h2>Room K</h2>
+            <div class="room-card" data-room-type="solo" data-room="room-k">
+                <img src="images/room10.jpeg" alt="Room K" class="room-image">
                 <p>Price: $300/month</p>
                 <p>Location: Countryside</p>
                 <a href="#" class="btn view-details">View Details</a>
+                <a href="confirmation.html" class="btn rent">Rent</a>
             </div>
-            <div class="room-card" data-room="room-l">
-                <h2>Room L</h2>
-                <p>Price: $650/month</ p>
+            <div class="room-card" data-room-type="vip" data-room="room-l">
+                <img src="images/room11.jpeg" alt="Room L" class="room-image">
+                <p>Price: $650/month</p>
                 <p>Location: Coastal Area</p>
                 <a href="#" class="btn view-details">View Details</a>
+                <a href="confirmation.html" class="btn rent">Rent</a>
             </div>
-            <div class="room-card" data-room="room-m">
-                <h2>Room M</h2>
+            <div class="room-card" data-room-type="family" data-room="room-m">
+                <img src="images/room12.jpeg" alt="Room M" class="room-image">
                 <p>Price: $375/month</p>
                 <p>Location: Historic District</p>
                 <a href="#" class="btn view-details">View Details</a>
+                <a href="confirmation.html" class="btn rent">Rent</a>
             </div>
-            <div class="room-card" data-room="room-n">
-                <h2>Room N</h2>
+            <div class="room-card" data-room-type="family" data-room="room-n">
+                <img src="images/room14.jpeg" alt="Room N" class="room-image">
                 <p>Price: $425/month</p>
                 <p>Location: Cultural Hub</p>
                 <a href="#" class="btn view-details">View Details</a>
+                <a href="confirmation.html" class="btn rent">Rent</a>
             </div>
         </section>
     </main>
@@ -118,6 +146,7 @@
         <p>&copy; 2024 Room Rental Management. All Rights Reserved.</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="scripts.js"></script>
 </body>
+
 </html>

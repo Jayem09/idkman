@@ -101,45 +101,53 @@ const roomData = {
 };
 
 // Modal functionality
+const roomTypeDropdown = document.getElementById("room-type");
+const roomCards = document.querySelectorAll(".room-card");
 const modal = document.getElementById("modal");
 const closeModal = document.getElementById("closeModal");
+const modalContent = document.getElementById("modal-room-content");
 
+// Function to display room details in the modal
+function displayRoomDetails(roomKey) {
+    const room = roomData[roomKey];
+
+    // Clear existing room details
+    modalContent.innerHTML = "";
+
+    // Display the selected room
+    const selectedRoomHTML = `
+        <h2>${room.title}</h2>
+        <p>Price: ${room.price}</p>
+        <p>Location: ${room.location}</p>
+        <p>Description: ${room.description}</p>
+        <img src="${room.image}" alt="${room.title}" />
+    `;
+    modalContent.innerHTML += selectedRoomHTML;
+
+    // Display other rooms
+    for (const key in roomData) {
+        if (key !== roomKey) {
+            const otherRoom = roomData[key];
+            const otherRoomHTML = `
+                               <div class="other-room">
+                    <h3>${otherRoom.title}</h3>
+                    <p>Price: ${otherRoom.price}</p>
+                    <p>Location: ${otherRoom.location}</p>
+                    <img src="${otherRoom.image}" alt="${otherRoom.title}" />
+                </div>
+            `;
+            modalContent.innerHTML += otherRoomHTML;
+        }
+    }
+
+    modal.style.display = "flex"; // Show modal
+}
+
+// Event listener for view details buttons
 document.querySelectorAll(".view-details").forEach(button => {
     button.addEventListener("click", (e) => {
         const roomKey = e.target.closest(".room-card").dataset.room;
-        const room = roomData[roomKey];
-
-        // Clear existing room details
-        const modalContent = document.getElementById("modal-room-content");
-        modalContent.innerHTML = ""; // Clear existing content
-
-        // Display the selected room
-        const selectedRoomHTML = `
-            <h2>${room.title}</h2>
-            <p>Price: ${room.price}</p>
-            <p>Location: ${room.location}</p>
-            <p>Description: ${room.description}</p>
-            <img src="${room.image}" alt="${room.title}" />
-        `;
-        modalContent.innerHTML += selectedRoomHTML;
-
-        // Display other rooms
-        for (const key in roomData) {
-            if (key !== roomKey) {
-                const otherRoom = roomData[key];
-                const otherRoomHTML = `
-                    <div class="other-room">
-                        <h3>${otherRoom.title}</h3>
-                        <p>Price: ${otherRoom.price}</p>
-                        <p>Location: ${otherRoom.location}</p>
-                        <img src="${otherRoom.image}" alt="${otherRoom.title}" />
-                    </div>
-                `;
-                modalContent.innerHTML += otherRoomHTML;
-            }
-        }
-
-        modal.style.display = "flex"; // Show modal
+        displayRoomDetails(roomKey);
     });
 });
 
@@ -148,8 +156,19 @@ closeModal.addEventListener("click", () => {
     modal.style.display = "none"; // Hide modal
 });
 
+// Hide modal when clicking outside of it
 window.addEventListener("click", (event) => {
     if (event.target === modal) {
         modal.style.display = "none"; // Hide modal if clicked outside
     }
+});
+
+// Filter room cards based on selected type
+roomTypeDropdown.addEventListener("change", function () {
+    const selectedType = this.value;
+
+    roomCards.forEach(card => {
+        const roomType = card.getAttribute("data-room-type"); // Assuming each room card has a data attribute for type
+        card.style.display = (selectedType === "all" || roomType === selectedType) ? "block" : "none"; // Show or hide the card
+    });
 });

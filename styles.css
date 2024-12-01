@@ -262,13 +262,41 @@ footer {
     border-radius: 8px;
 }
 
+.filter-container {
+    display: flex;
+    justify-content: center; /* Center the content horizontally */
+    align-items: center; /* Center items vertically */
+    margin: 20px 0; /* Add margin above and below */
+}
+
+.filter-container label {
+    margin-right: 10px; /* Space between the label and the dropdown */
+    font-weight: bold; /* Bold font for the label */
+}
+
+.filter-container select {
+    padding: 8px 12px; /* Padding inside the dropdown */
+    border: 1px solid #ccc; /* Border around the dropdown */
+    border-radius: 4px; /* Rounded corners for the dropdown */
+    font-size: 16px; /* Increase font size */
+    cursor: pointer; /* Change cursor on hover */
+    transition: border-color 0.3s; /* Smooth transition for border color */
+}
+
+/* Optional: Add hover effect for the dropdown */
+.filter-container select:hover {
+    border-color: #4CAF50; /* Change border color on hover */
+}
+
 /* Responsive Design */     
 @media (max-width: 768px) {
     .feature-cards {
         flex-direction: column;
         align-items: center;
     }
+    
 }
+    
 
 /* Responsive Design */
 @media (max-width: 768px) {
