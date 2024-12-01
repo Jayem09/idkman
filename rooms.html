@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rooms - Room Rental Management</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Available Rooms</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="rooms.html" class="active">Rooms</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="room-list">
+            <div class="room-card" data-room="room-a">
+                <h2>Room A</h2>
+                <p>Price: $500/month</p>
+                <p>Location: Downtown</p>
+                <a href="#" class="btn view-details">View Details</a>
+            </div>
+            <div class="room-card" data-room="room-b">
+                <h2>Room B</h2>
+                <p>Price: $400/month</p>
+                <p>Location: Suburb</p>
+                <a href="#" class="btn view-details">View Details</a>
+            </div>
+            <div class="room-card" data-room="room-c">
+                <h2>Room C</h2>
+                <p>Price: $300/month</p>
+                <p>Location: Rural Area</p>
+                <a href="#" class="btn view-details">View Details</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span id="closeModal" class="close-btn">&times;</span>
+            <h2 id="modal-room-title"></h2>
+            <p id="modal-room-price"></p>
+            <p id="modal-room-location"></p>
+            <p id="modal-room-description"></p>
+            <img id="modal-room-image" src="" alt="Room Image" />
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Room Rental Management. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
