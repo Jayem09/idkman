@@ -20,6 +20,16 @@ document.getElementById("bookingForm").onsubmit = function (event) {
         return;
     }
 
+    document.getElementById('bookingForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        Swal.fire({
+            icon: 'success',
+            title: 'Booking successful!',
+            text: 'Your booking has been successfully made.',
+            timer: 2000
+        });
+    });
+
     // Send data to server
     fetch('/api/book', {
         method: 'POST',
