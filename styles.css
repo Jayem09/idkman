@@ -47,12 +47,166 @@ main {
     text-align: center;
 }
 
+/* Button Styles */
+.btn {
+    background: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background: #0056b3; /* Darker shade on hover */
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+}
+
+/* Room Cards */
+.room-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.room-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px; /* Fixed width for uniformity */
+    text-align: center;
+    transition: transform 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.room-card:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+}
+
+.room-card h2 {
+    margin: 10px 0;
+    color : #007bff; /* Primary color for headings */
+}
+
+.room-card p {
+    margin: 5px 0;
+    color: #555;
+}
+
+/* Contact Form */
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: left;
+    background-color: #fff; /* White background for contrast */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.contact-form label {
+    display: block;
+    margin: 10px 0 5px;
+    color: #555;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.contact-form button {
+    width: 100%;
+    padding: 10px;
+    background: #007bff; /* Primary button color */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background: #0056b3; /* Darker shade on hover */
+}
+
+/* Room Details */
+.room-details {
+    max-width: 600px;
+    margin: 20px auto;
+    text-align: center;
+    background-color: #fff; /* White background for details */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.room-details .room-image {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    width: 80%;
+    max-width: 500px;
+    position: relative;
+}
+
+.modal-content .close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
 /* Hero Section */
 .hero {
-    background-image: url('images/hero-background.jpg'); /* Replace with your hero image */
     background-size: cover;
     background-position: center;
-    color: white;
+    color: black;
     text-align: center;
     padding: 100px 20px;
 }
@@ -73,11 +227,6 @@ main {
     padding: 15px 30px;
     border-radius: 5px;
     text-decoration: none;
-    transition: background-color 0.3s ease;
-}
-
-.hero .btn:hover {
-    background: #e6b800; /* Darker shade on hover */
 }
 
 /* Features Section */
@@ -89,7 +238,6 @@ main {
 
 .features h2 {
     margin-bottom: 40px;
-    color: #007bff; /* Primary color for headings */
 }
 
 .feature-cards {
@@ -106,11 +254,6 @@ main {
     padding: 20px;
     width: 300px;
     text-align: center;
-    transition: transform 0.3s ease; /* Smooth transition for hover effect */
-}
-
-.feature-card:hover {
-    transform: translateY(-5px); /* Lift effect on hover */
 }
 
 .feature-card img {
@@ -119,56 +262,12 @@ main {
     border-radius: 8px;
 }
 
-/* Testimonials Section */
-.testimonials {
-    padding: 50px 20px;
-    text-align: center;
-}
-
-.testimonials h2 {
-    margin-bottom: 40px;
-    color: #007bff; /* Primary color for headings */
-}
-
-.testimonial-cards {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.testimonial-card {
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    width: 300px;
-    text-align: center;
-}
-
-/* Trust Indicators Section */
-.trust-indicators {
-    padding: 50px 20px;
-    text-align: center;
-}
-
-.trust-indicators h2 {
-    margin-bottom: 20px;
-    color: #007bff; /* Primary color for headings */
-}
-
-.trust-logos img {
-    width: 100px; /* Adjust logo size as needed */
-    margin: 0 10px;
-}
-
-/* Footer */
-footer {
-    background: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px 0;
-    margin-top: 20px;
+/* Responsive Design */     
+@media (max-width: 768px) {
+    .feature-cards {
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
 /* Responsive Design */
@@ -179,24 +278,16 @@ footer {
         align-items: center;
     }
 
-    .feature-cards, . testimonial-cards {
-        flex-direction: column; /* Stack cards vertically on smaller screens */
+    .room-list {
+        flex-direction: column;
         align-items: center;
     }
 
-    .feature-card, .testimonial-card {
-        width: 90%; /* Make cards take up more width on smaller screens */
+    .room-card {
+        width: 90%; /* Adjust width for smaller screens */
     }
 
     .contact-form {
         width: 90%; /* Adjust form width for smaller screens */
     }
-
-    .hero-content h2 {
-        font-size: 2em; /* Adjust font size for smaller screens */
-    }
-
-    .hero-content p {
-        font-size: 1em; /* Adjust font size for smaller screens */
-    }
-}   
+}
