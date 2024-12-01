@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="booking.css"> <!-- Link to your CSS file -->
+    <title>Booking Form</title>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Booking Details</h2>
+        <form id="bookingForm" action="/booking.php" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required aria-label="Name">
+
+            <label for="startDate">Start Date:</label>
+            <input type="date" id="startDate" name="startDate" required aria-label="Start Date" min="">
+
+            <label for="endDate">End Date:</label>
+            <input type="date" id="endDate" name="endDate" required aria-label="End Date" min="">
+
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address" required aria-label="Address">
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+
+</html>
