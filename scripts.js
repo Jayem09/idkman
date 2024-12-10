@@ -2,166 +2,136 @@
 const roomData = {
     "room-a": {
         title: "Room A",
-        price: "$500/month",
+        price: "₱500/month",
         location: "Downtown",
         description: "Spacious room with a great view, furnished with modern amenities.",
-        image: "images/room-a.jpg"
+        image: "images/room-1.jpeg"
     },
     "room-b": {
         title: "Room B",
-        price: "$400/month",
+        price: "₱400/month",
         location: "Suburb",
         description: "Cozy room in a quiet neighborhood, ideal for students and professionals.",
-        image: "images/room-b.jpg"
+        image: "images/room-2.jpeg"
     },
     "room-c": {
         title: "Room C",
-        price: "$300/month",
+        price: "₱300/month",
         location: "Rural Area",
         description: "Affordable room surrounded by nature, perfect for relaxation.",
-        image: "images/room-c.jpg"
+        image: "images/room-3.jpeg"
     },
     "room-d": {
         title: "Room D",
-        price: "$600/month",
+        price: "₱600/month",
         location: "City Center",
         description: "Modern room with a city view.",
-        image: "images/room-d.jpg"
+        image: "images/room-4.jpeg"
     },
     "room-e": {
         title: "Room E",
-        price: "$450/month",
+        price: "₱450/month",
         location: "Uptown",
         description: "Stylish room in a vibrant area.",
-        image: "images/room-e.jpg"
+        image: "images/room-5.jpeg"
     },
     "room-f": {
         title: "Room F",
-        price: "$550/month",
+        price: "₱550/month",
         location: "Near Park",
         description: "Room with easy access to green spaces.",
-        image: "images/room-f.jpg"
+        image: "images/room-6.jpeg"
     },
     "room-g": {
         title: "Room G",
-        price: "$350/month",
+        price: "₱350/month",
         location: "Suburban Area",
         description: "Comfortable room with a friendly atmosphere.",
-        image: "images/room-g.jpg"
+        image: "images/room-7.jpeg"
     },
     "room-h": {
         title: "Room H",
-        price: "$700/month",
+        price: "₱700/month",
         location: "Luxury District",
         description: "High-end room with premium facilities.",
-        image: "images/room-h.jpg"
+        image: "images/room-8.jpeg"
     },
     "room-i": {
         title: "Room I",
-        price: "$400/month",
+        price: "₱400/month",
         location: "Near University",
         description: "Ideal for students, close to campus.",
-        image: "images/room-i.jpg"
+        image: "images/room-9.jpeg"
     },
     "room-j": {
         title: "Room J",
-        price: "$500/month",
+        price: "₱500/month",
         location: "Business District",
         description: "Perfect for professionals, centrally located.",
-        image: "images/room-j.jpg"
+        image: "images/room-10.jpeg"
     },
     "room-k": {
         title: "Room K",
-        price: "$300/month",
+        price: "₱300/month",
         location: "Countryside",
         description: "Peaceful room with scenic views.",
-        image: "images/room-k.jpg"
+        image: "images/room-11.jpeg"
     },
     "room-l": {
         title: "Room L",
-        price: "$650/month",
+        price: "₱650/month",
         location: "Coastal Area",
         description: "Room with ocean views and fresh air.",
-        image: "images/room-l.jpg"
+        image: "images/room-12.jpeg"
     },
     "room-m": {
         title: "Room M",
-        price: "$375/month",
+        price: "₱375/month",
         location: "Historic District",
         description: "Charming room with vintage decor.",
-        image: "images/room-m.jpg"
+        image: "images/room-13.jpeg"
     },
     "room-n": {
         title: "Room N",
-        price: "$425/month",
+        price: "₱425/month",
         location: "Cultural Hub",
         description: "Vibrant room near art galleries and theaters.",
-        image: "images/room-n.jpg"
+        image: "images/room-14.jpeg"
     }
 };
 
-// Modal functionality
-const roomTypeDropdown = document.getElementById("room-type");
-const roomCards = document.querySelectorAll(".room-card");
-const modal = document.getElementById("modal");
-const closeModal = document.getElementById("closeModal");
-const modalContent = document.getElementById("modal-room-content");
 
-// Function to display room details in the modal
-function displayRoomDetails(roomKey) {
-    const room = roomData[roomKey];
+// Function to populate room details on the details page
+function populateRoomDetails() {
+    // Retrieve the room key from the URL (e.g., ?room=room-a)
+    const urlParams = new URLSearchParams(window.location.search);
+    const roomKey = urlParams.get("room");
 
-    // Clear existing room details
-    modalContent.innerHTML = "";
+    if (roomKey && roomData[roomKey]) {
+        const room = roomData[roomKey];
 
-    // Display the selected room
-    const selectedRoomHTML = `
-        <h2>${room.title}</h2>
-        <p>Price: ${room.price}</p>
-        <p>Location: ${room.location}</p>
-        <p>Description: ${room.description}</p>
-        <img src="${room.image}" alt="${room.title}" />
-    `;
-    modalContent.innerHTML += selectedRoomHTML;
-
-    // Display other rooms
-    for (const key in roomData) {
-        if (key !== roomKey) {
-            const otherRoom = roomData[key];
-            const otherRoomHTML = `
-                               <div class="other-room">
-                    <h3>${otherRoom.title}</h3>
-                    <p>Price: ${otherRoom.price}</p>
-                    <p>Location: ${otherRoom.location}</p>
-                    <img src="${otherRoom.image}" alt="${otherRoom.title}" />
-                </div>
-            `;
-            modalContent.innerHTML += otherRoomHTML;
-        }
+        // Populate room details
+        document.getElementById("room-title").textContent = room.title;
+        document.getElementById("room-price").textContent = `Price: ${room.price}`;
+        document.getElementById("room-location").textContent = `Location: ${room.location}`;
+        document.getElementById("room-description").textContent = `Description: ${room.description}`;
+        document.getElementById("room-image").src = room.image;
+        document.getElementById("room-image").alt = room.title;
+    } else {
+        alert("Room details not found!");
     }
-
-    modal.style.display = "flex"; // Show modal
 }
 
-// Event listener for view details buttons
-document.querySelectorAll(".view-details").forEach(button => {
-    button.addEventListener("click", (e) => {
-        const roomKey = e.target.closest(".room-card").dataset.room;
-        displayRoomDetails(roomKey);
-    });
+// Add event listener for the back button
+document.getElementById("back-button").addEventListener("click", () => {
+    window.history.back(); // Navigate back to the previous page
 });
 
-// Close modal functionality
-closeModal.addEventListener("click", () => {
-    modal.style.display = "none"; // Hide modal
-});
 
-// Hide modal when clicking outside of it
-window.addEventListener("click", (event) => {
-    if (event.target === modal) {
-        modal.style.display = "none"; // Hide modal if clicked outside
-    }
-});
+
+// Populate room details when the page loads
+document.addEventListener("DOMContentLoaded", populateRoomDetails);
+
 
 // Filter room cards based on selected type
 roomTypeDropdown.addEventListener("change", function () {
@@ -172,3 +142,4 @@ roomTypeDropdown.addEventListener("change", function () {
         card.style.display = (selectedType === "all" || roomType === selectedType) ? "block" : "none"; // Show or hide the card
     });
 });
+

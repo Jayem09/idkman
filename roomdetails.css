@@ -25,6 +25,16 @@ header {
     margin: 20px 0;
 }
 
+/* Add this for the image to fit properly */
+#room-image {
+    width: 100%; /* Make the image responsive */
+    max-width: 100%; /* Prevent image from becoming too wide */
+    height: auto; /* Keep the aspect ratio intact */
+    border-radius: 8px; /* Optional: rounded corners for the image */
+    object-fit: cover; /* Optional: ensure image covers the space */
+}
+
+/* Room info section styling */
 .room-info {
     text-align: left;
     margin-top: 20px;

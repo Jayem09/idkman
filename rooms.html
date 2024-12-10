@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rooms - Room Rental Management</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
     <header>
         <h1>Available Rooms</h1>
@@ -16,11 +14,11 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="rooms.html" class="active">Rooms</a></li>
                 <li><a href="contact.html">Contact</a></li>
+                <li><a href="rentFunc/booking.html">Bookings</a></li>
             </ul>
         </nav>
     </header>
     <main>
-
         <div class="filter-container">
             <label for="room-type">Filter by Room Type:</label>
             <select id="room-type">
@@ -34,118 +32,109 @@
         <section class="room-list">
             <div class="room-card" data-room-type="family">
                 <img src="images/room1.jpeg" alt="Room A" class="room-image">
-                <p>Price: $500/month</p>
+                <p>Price: ₱500/month</p>
                 <p>Location: Downtown</p>
-                <a href="#" class="btn view-details">View Details</a>
+                <a href="roomdetails.html?room=room-a" class="btn view-details">View Details</a>
                 <a href="/rentFunc/booking.html" class="btn rent">Rent</a>
             </div>
             <div class="room-card" data-room-type="vip">
                 <img src="images/room13.jpeg" alt="Room B" class="room-image">
-                <p>Price: $400/month</p>
+                <p>Price: ₱400/month</p>
                 <p>Location: Suburb</p>
-                <a href="#" class="btn view-details">View Details</a>
+                <a href="roomdetails.html?room=room-b" class="btn view-details">View Details</a>
                 <a href="/rentFunc/booking.html" class="btn rent">Rent</a>
             </div>
             <div class="room-card" data-room-type="solo">
                 <img src="images/room3.jpeg" alt="Room C" class="room-image">
-                <p>Price: $300/month</p>
+                <p>Price: ₱300/month</p>
                 <p>Location: Rural Area</p>
-                <a href="#" class="btn view-details">View Details</a>
+                <a href="roomdetails.html?room=room-c" class="btn view-details">View Details</a>
                 <a href="/rentFunc/booking.html" class="btn rent">Rent</a>
             </div>
             <div class="room-card" data-room-type="for-2">
                 <img src="images/room15.jpeg" alt="Room D" class="room-image">
-                <p>Price: $600/month</p>
+                <p>Price: ₱600/month</p>
                 <p>Location: City Center</p>
-                <a href="#" class="btn view-details">View Details</a>
+                <a href="roomdetails.html?room=room-d" class="btn view-details">View Details</a>
                 <a href="/rentFunc/booking.html" class="btn rent">Rent</a>
             </div>
             <div class="room-card" data-room-type="family">
                 <img src="images/room5.jpeg" alt="Room E" class="room-image">
-                <p>Price: $450/month</p>
+                <p>Price: ₱450/month</p>
                 <p>Location: Uptown</p>
-                <a href="#" class="btn view-details">View Details</a>
+                <a href="roomdetails.html?room=room-e" class="btn view-details">View Details</a>
                 <a href="/rentFunc/booking.html" class="btn rent">Rent</a>
             </div>
             <div class="room-card" data-room-type="vip">
                 <img src="images/room6.jpeg" alt="Room F" class="room-image">
-                <p>Price: $550/month</p>
+                <p>Price: ₱550/month</p>
                 <p>Location: Near Park</p>
-                <a href="#" class="btn view-details">View Details</a>
+                <a href="roomdetails.html?room=room-f" class="btn view-details">View Details</a>
                 <a href="/rentFunc/booking.html" class="btn rent">Rent</a>
             </div>
             <div class="room-card" data-room-type="solo">
                 <img src="images/room7.jpeg" alt="Room G" class="room-image">
-                <p>Price: $350/month</p>
+                <p>Price: ₱350/month</p>
                 <p>Location: Suburban Area</p>
-                <a href="#" class="btn view-details">View Details</a>
+                <a href="roomdetails.html?room=room-g" class="btn view-details">View Details</a>
                 <a href="/rentFunc/booking.html" class="btn rent">Rent</a>
             </div>
             <div class="room-card" data-room-type="vip">
                 <img src="images/room8.jpeg" alt="Room H" class="room-image">
- <p>Price: $700/month</p>
+                <p>Price: ₱700/month</p>
                 <p>Location: Luxury District</p>
-                <a href="#" class="btn view-details">View Details</a>
+                <a href="roomdetails.html?room=room-h" class="btn view-details">View Details</a>
                 <a href="/rentFunc/booking.html" class="btn rent">Rent</a>
             </div>
             <div class="room-card" data-room-type="family">
                 <img src="images/room9.jpeg" alt="Room I" class="room-image">
-                <p>Price: $400/month</p>
+                <p>Price: ₱400/month</p>
                 <p>Location: Near University</p>
-                <a href="#" class="btn view-details">View Details</a>
+                <a href="roomdetails.html?room=room-i" class="btn view-details">View Details</a>
                 <a href="/rentFunc/booking.html" class="btn rent">Rent</a>
             </div>
             <div class="room-card" data-room-type="solo">
                 <img src="images/images.jpeg" alt="Room J" class="room-image">
-                <p>Price: $500/month</p>
+                <p>Price: ₱500/month</p>
                 <p>Location: Business District</p>
-                <a href="#" class="btn view-details">View Details</a>
+                <a href="roomdetails.html?room=room-j" class="btn view-details">View Details</a>
                 <a href="/rentFunc/booking.html" class="btn rent">Rent</a>
             </div>
             <div class="room-card" data-room-type="solo">
                 <img src="images/room10.jpeg" alt="Room K" class="room-image">
-                <p>Price: $300/month</p>
+                <p>Price: ₱300/month</p>
                 <p>Location: Countryside</p>
-                <a href="#" class="btn view-details">View Details</a>
+                <a href="roomdetails.html?room=room-k" class="btn view-details">View Details</a>
                 <a href="/rentFunc/booking.html" class="btn rent">Rent</a>
             </div>
             <div class="room-card" data-room-type="vip">
                 <img src="images/room11.jpeg" alt="Room L" class="room-image">
-                <p>Price: $650/month</p>
+                <p>Price: ₱650/month</p>
                 <p>Location: Coastal Area</p>
-                <a href="#" class="btn view-details">View Details</a>
+                <a href="roomdetails.html?room=room-l" class="btn view-details">View Details</a>
                 <a href="/rentFunc/booking.html" class="btn rent">Rent</a>
             </div>
             <div class="room-card" data-room-type="family">
                 <img src="images/room12.jpeg" alt="Room M" class="room-image">
-                <p>Price: $375/month</p>
+                <p>Price: ₱375/month</p>
                 <p>Location: Historic District</p>
-                <a href="#" class="btn view-details">View Details</a>
+                <a href="roomdetails.html?room=room-m" class="btn view-details">View Details</a>
                 <a href="/rentFunc/booking.html" class="btn rent">Rent</a>
             </div>
             <div class="room-card" data-room-type="family">
                 <img src="images/room14.jpeg" alt="Room N" class="room-image">
-                <p>Price: $425/month</p>
+                <p>Price: ₱425/month</p>
                 <p>Location: Cultural Hub</p>
-                <a href="#" class="btn view-details">View Details</a>
+                <a href="roomdetails.html?room=room-n" class="btn view-details">View Details</a>
                 <a href="/rentFunc/booking.html" class="btn rent">Rent</a>
             </div>
         </section>
     </main>
 
-    <!-- Modal -->
-    <div id="modal" class="modal">
-        <div class="modal-content">
-            <span id="closeModal" class="close">&times;</span>
-            <div id="modal-room-content"></div>
-        </div>
-    </div>
-
     <footer>
-        <p>&copy; 2024 Room Rental Management. All Rights Reserved.</p>
+        <p>&copy; 2024 Room Rental Management System. All rights reserved.</p>
     </footer>
 
-    <script src="scripts.js"></script>
+    <script src="script.js"></script>
 </body>
-
 </html>
