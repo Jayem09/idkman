@@ -101,7 +101,7 @@ const roomData = {
 };
 
 
-// Function to populate room details on the details page
+
 function populateRoomDetails() {
     // Retrieve the room key from the URL (e.g., ?room=room-a)
     const urlParams = new URLSearchParams(window.location.search);
@@ -122,18 +122,17 @@ function populateRoomDetails() {
     }
 }
 
-// Add event listener for the back button
+
 document.getElementById("back-button").addEventListener("click", () => {
-    window.history.back(); // Navigate back to the previous page
+    window.history.back(); 
 });
 
 
 
-// Populate room details when the page loads
+
 document.addEventListener("DOMContentLoaded", populateRoomDetails);
 
 
-// Filter room cards based on selected type
 roomTypeDropdown.addEventListener("change", function () {
     const selectedType = this.value;
 
